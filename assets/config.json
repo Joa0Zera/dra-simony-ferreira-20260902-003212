@@ -1,0 +1,40 @@
+{
+  "empresa": {
+    "nome": "Simony Ferreira Estética",
+    "telefone": "(85) 98843-8262",
+    "email": "",
+    "endereco": "R. Benjamim Brasil, 412 - Jardim Cearense, Fortaleza - CE, 60711-442",
+    "instagram": ""
+  },
+  "pagina": {
+    "titulo": "Estética Facial e Corporal em Fortaleza",
+    "subtitulo": "Saúde, beleza e bem-estar com a Dra. Simony Ferreira",
+    "avaliacoes": "5,0 · 100 avaliações no Google"
+  },
+  "secoes": {
+    "hero": {
+      "titulo": "Estética Facial e Corporal em Fortaleza",
+      "descricao": "Saúde, beleza e bem-estar é o seu lugar. Procedimentos faciais e corporais com a Dra. Simony Ferreira.",
+      "cta_principal": "Agendar no WhatsApp",
+      "cta_secundaria": "Ligar agora"
+    },
+    "servicos": {
+      "titulo": "Nossos Procedimentos",
+      "items": [
+        { "numero": "01", "nome": "Skinbooster", "desc": "A partir de R$ 400,00" },
+        { "numero": "02", "nome": "Botox", "desc": "Facial" },
+        { "numero": "03", "nome": "Enzimas", "desc": "Corporal" },
+        { "numero": "04", "nome": "Crio HD", "desc": "Corporal" }
+      ]
+    },
+    "sobre": {
+      "titulo": "Sobre o Atendimento",
+      "descricao": "Temos vários procedimentos corporal, facial, remoção de sinais, entre outras. Acesse o site ou chame no WhatsApp. Saúde, beleza e bem-estar: Simony Ferreira é o seu lugar."
+    }
+  },
+  "cores": {
+    "primaria": "#FFFFFF",
+    "secundaria": "#FFD700",
+    "destaque": "#FF6B35"
+  }
+}
