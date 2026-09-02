@@ -514,18 +514,122 @@ nav.menu-desktop a.nav-ativo::after { width: 100%; }
 }
 
 /* ---------- Sobre ---------- */
-.sobre { background: linear-gradient(180deg, var(--cor-primaria), var(--cor-secundaria-clara)); }
+.sobre { background: linear-gradient(180deg, var(--cor-primaria), var(--cor-secundaria-clara)); position: relative; overflow: hidden; }
+
+.sobre-folha {
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  font-size: 130px;
+  opacity: 0.14;
+  pointer-events: none;
+  color: var(--cor-secundaria-escura);
+  display: flex;
+  transform: rotate(-15deg);
+}
 
 .sobre-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 56px;
   align-items: center;
+  position: relative;
 }
 
-.sobre-texto h2 { font-size: 36px; margin-bottom: 20px; text-align: left; }
+.sobre-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--cor-destaque);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.sobre-eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--cor-secundaria-escura);
+}
+.sobre-eyebrow::after {
+  content: "✦";
+  font-size: 11px;
+  color: var(--cor-secundaria-escura);
+}
+
+.sobre-texto h2 { font-size: 38px; line-height: 1.2; margin-bottom: 20px; text-align: left; }
+.sobre-texto h2 em { font-style: italic; color: var(--cor-destaque); font-weight: 600; }
+.sobre-titulo-coracao { width: 30px; height: 30px; margin-left: 8px; color: var(--cor-secundaria-escura); vertical-align: middle; }
 .sobre-texto p { font-size: 17px; margin-bottom: 16px; }
 .sobre-texto strong { color: var(--cor-destaque); }
+
+.sobre-recursos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 32px 0 28px;
+}
+.sobre-recurso {
+  background: var(--cor-primaria);
+  border-radius: 16px;
+  padding: 24px 14px;
+  text-align: center;
+  box-shadow: var(--sombra-padrao);
+}
+.sobre-recurso-icone {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--cor-secundaria-clara);
+  color: var(--cor-destaque);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 0 auto 14px;
+}
+.sobre-recurso h4 { font-size: 15px; margin-bottom: 6px; font-family: var(--fonte-titulo); }
+.sobre-recurso p { font-size: 13px; margin-bottom: 0; }
+
+.sobre-cta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.sobre-cta .btn-whatsapp {
+  background: var(--cor-destaque);
+  color: var(--cor-primaria);
+  border-color: var(--cor-destaque);
+}
+.sobre-cta .btn-whatsapp:hover {
+  background: var(--cor-secundaria-escura);
+  border-color: var(--cor-secundaria-escura);
+  color: var(--cor-primaria);
+}
+.sobre-cta-seta { margin-left: 2px; }
+
+.sobre-social-proof {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+.sobre-avatares { display: flex; }
+.sobre-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cor-secundaria), var(--cor-destaque));
+  border: 3px solid var(--cor-primaria);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  margin-left: -12px;
+}
+.sobre-avatar:first-child { margin-left: 0; }
 
 .sobre-imagem { display: flex; flex-direction: column; gap: 24px; }
 .sobre-imagem img { border-radius: 16px; box-shadow: var(--sombra-hover); max-height: 420px; object-fit: cover; }
@@ -551,6 +655,12 @@ nav.menu-desktop a.nav-ativo::after { width: 100%; }
   font-weight: 600;
   line-height: 1.4;
   margin-bottom: 24px;
+}
+.sobre-painel-divisor {
+  width: 60px;
+  height: 1px;
+  background: rgba(255,255,255,0.35);
+  margin-bottom: 20px;
 }
 .sobre-painel-nota {
   display: flex;
@@ -1156,6 +1266,8 @@ footer {
   .hero h1 { font-size: 38px; }
   .hero-selo { position: static; margin-top: 24px; }
   .sobre-grid { grid-template-columns: 1fr; }
+  .sobre-recursos { grid-template-columns: repeat(2, 1fr); }
+  .sobre-folha { display: none; }
   .contato-grid { grid-template-columns: 1fr; }
   nav.menu-desktop { display: none; }
   .header-divisor { display: none; }
@@ -1171,6 +1283,8 @@ footer {
   .hero-stats { gap: 20px; }
   .hero-stats-card { padding: 20px; }
   .section-titulo { font-size: 30px; }
+  .sobre-texto h2 { font-size: 30px; }
+  .sobre-recursos { grid-template-columns: 1fr; }
   .diferenciais-grid { grid-template-columns: 1fr; }
   .diferenciais-banner { grid-template-columns: 1fr; }
 }
