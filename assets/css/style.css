@@ -1,16 +1,16 @@
 /* ==========================================================================
    Simony Ferreira Estética — Landing Page
-   Paleta obrigatória: #FFFFFF (primária) / #FFD700 (secundária) / #FF6B35 (destaque)
+   Paleta obrigatória: #FFFFFF (primária) / #A8D5A0 (verde claro) / #4F8A5B (destaque)
    ========================================================================== */
 
 :root {
   --cor-primaria: #FFFFFF;
-  --cor-secundaria: #FFD700;
-  --cor-destaque: #FF6B35;
-  --cor-secundaria-clara: #FFF6D6;
-  --cor-secundaria-escura: #E6C200;
-  --cor-texto: #4A2A18;
-  --cor-texto-claro: #8C5A3D;
+  --cor-secundaria: #A8D5A0;
+  --cor-destaque: #4F8A5B;
+  --cor-secundaria-clara: #EAF7E4;
+  --cor-secundaria-escura: #6FA96C;
+  --cor-texto: #2F3A2E;
+  --cor-texto-claro: #5C6B5A;
   --fonte-titulo: 'Playfair Display', serif;
   --fonte-corpo: 'Poppins', sans-serif;
   --sombra-padrao: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -140,12 +140,16 @@ header {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--fonte-titulo);
   font-size: 24px;
   font-weight: 700;
   color: var(--cor-destaque);
 }
 .logo span { color: var(--cor-secundaria-escura); }
+.logo img { width: 44px; height: 44px; max-height: 44px; object-fit: contain; border-radius: 0; }
 
 nav.menu-desktop ul {
   list-style: none;
@@ -324,8 +328,8 @@ nav.menu-desktop a:hover::after { width: 100%; }
   box-shadow: var(--sombra-padrao);
 }
 .servico-icone-1 { background: linear-gradient(135deg, var(--cor-secundaria), var(--cor-secundaria-escura)); }
-.servico-icone-2 { background: linear-gradient(135deg, var(--cor-destaque), #FFA36C); }
-.servico-icone-3 { background: linear-gradient(135deg, #FF8C5A, var(--cor-destaque)); }
+.servico-icone-2 { background: linear-gradient(135deg, var(--cor-destaque), #8FCB7E); }
+.servico-icone-3 { background: linear-gradient(135deg, #7CC66F, var(--cor-destaque)); }
 .servico-icone-4 { background: linear-gradient(135deg, var(--cor-secundaria-escura), var(--cor-destaque)); }
 
 /* ---------- Sobre ---------- */
@@ -342,7 +346,8 @@ nav.menu-desktop a:hover::after { width: 100%; }
 .sobre-texto p { font-size: 17px; margin-bottom: 16px; }
 .sobre-texto strong { color: var(--cor-destaque); }
 
-.sobre-imagem img { border-radius: 16px; box-shadow: var(--sombra-hover); }
+.sobre-imagem { display: flex; flex-direction: column; gap: 24px; }
+.sobre-imagem img { border-radius: 16px; box-shadow: var(--sombra-hover); max-height: 420px; object-fit: cover; }
 
 .sobre-painel {
   background: linear-gradient(150deg, var(--cor-destaque), var(--cor-secundaria-escura));
@@ -375,6 +380,31 @@ nav.menu-desktop a:hover::after { width: 100%; }
   color: rgba(255,255,255,0.9);
 }
 .sobre-painel-estrelas { font-size: 18px; letter-spacing: 2px; }
+
+/* ---------- Ambiente ---------- */
+.ambiente { background: linear-gradient(180deg, var(--cor-primaria), var(--cor-secundaria-clara)); }
+
+.ambiente-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ambiente-item {
+  background: var(--cor-primaria);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--sombra-padrao);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ambiente-item:hover {
+  transform: scale(1.03);
+  box-shadow: var(--sombra-hover);
+}
+.ambiente-item img { border-radius: 16px 16px 0 0; max-height: 280px; height: 280px; object-fit: cover; }
+.ambiente-legenda { padding: 18px; text-align: center; font-weight: 600; color: var(--cor-destaque); }
 
 /* ---------- Diferenciais ---------- */
 .diferenciais {
@@ -511,11 +541,10 @@ nav.menu-desktop a:hover::after { width: 100%; }
   justify-content: center;
   font-size: 56px;
 }
-.galeria-visual-1 { padding: 0; }
-.galeria-visual-1 img { max-height: 260px; height: 100%; object-fit: cover; border-radius: 16px 16px 0 0; }
-.galeria-visual-2 { background: linear-gradient(135deg, var(--cor-destaque), #FFA36C); }
-.galeria-visual-3 { background: linear-gradient(135deg, #FF8C5A, var(--cor-secundaria-escura)); }
-.galeria-visual-4 { background: linear-gradient(135deg, var(--cor-secundaria), var(--cor-secundaria-escura)); }
+.galeria-visual-1, .galeria-visual-2, .galeria-visual-3, .galeria-visual-4 { padding: 0; }
+.galeria-visual-1 img, .galeria-visual-2 img, .galeria-visual-3 img, .galeria-visual-4 img {
+  max-height: 260px; height: 100%; object-fit: cover; border-radius: 16px 16px 0 0;
+}
 
 /* ---------- CTA Final ---------- */
 .cta-final {

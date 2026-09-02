@@ -34,7 +34,7 @@
   },
   "cores": {
     "primaria": "#FFFFFF",
-    "secundaria": "#FFD700",
-    "destaque": "#FF6B35"
+    "secundaria": "#A8D5A0",
+    "destaque": "#4F8A5B"
   }
 }
