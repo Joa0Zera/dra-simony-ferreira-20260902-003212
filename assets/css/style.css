@@ -587,6 +587,36 @@ nav.menu-desktop a.nav-ativo::after { width: 100%; }
 .ambiente-item img { border-radius: 16px 16px 0 0; width: 100%; height: auto; object-fit: contain; }
 .ambiente-legenda { padding: 18px; text-align: center; font-weight: 600; color: var(--cor-destaque); }
 
+.ambiente-imagem-wrap { position: relative; }
+.ambiente-imagem-wrap img { display: block; }
+.ambiente-overlay-texto {
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  transform: translateY(-50%);
+  width: 44%;
+}
+.ambiente-overlay-titulo {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(13px, 3vw, 22px);
+  font-weight: 700;
+  color: var(--cor-destaque);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+.ambiente-overlay-frase {
+  font-family: var(--fonte-corpo);
+  font-size: clamp(9px, 1.7vw, 14px);
+  line-height: 1.4;
+  color: var(--cor-texto);
+  font-weight: 400;
+}
+
+@media (max-width: 560px) {
+  .ambiente-overlay-texto { width: 48%; left: 5%; }
+}
+
 /* ---------- Diferenciais ---------- */
 .diferenciais {
   background: linear-gradient(135deg, var(--cor-secundaria-clara), var(--cor-primaria));
