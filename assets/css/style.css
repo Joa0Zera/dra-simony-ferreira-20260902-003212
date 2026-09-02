@@ -215,17 +215,17 @@ nav.menu-desktop a:hover::after { width: 100%; }
   display: flex;
   align-items: center;
   padding-top: 110px;
-  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria-clara) 45%, var(--cor-secundaria) 100%);
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.15) 45%, rgba(255,255,255,0) 65%), url('../imagens-refinamento/2-image.png');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 48px;
-  align-items: center;
+.hero-conteudo {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 40px 20px;
 }
@@ -240,6 +240,12 @@ nav.menu-desktop a:hover::after { width: 100%; }
   border-radius: 20px;
   box-shadow: var(--sombra-padrao);
   margin-bottom: 20px;
+}
+
+.hero-texto {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
 }
 
 .hero h1 {
@@ -258,12 +264,40 @@ nav.menu-desktop a:hover::after { width: 100%; }
 
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 40px; }
 
+.hero-stats-card {
+  display: inline-block;
+  background: var(--cor-primaria);
+  border-radius: 20px;
+  box-shadow: var(--sombra-padrao);
+  padding: 28px 32px;
+}
+
 .hero-stats {
   display: flex;
-  gap: 36px;
+  gap: 32px;
   flex-wrap: wrap;
 }
-.stat-item { text-align: left; }
+.stat-item {
+  text-align: center;
+  position: relative;
+  padding-right: 32px;
+}
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 4px; right: 0;
+  width: 1px; height: calc(100% - 8px);
+  background: var(--cor-secundaria-clara);
+}
+.stat-icone {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: var(--cor-secundaria-clara);
+  color: var(--cor-destaque);
+  font-size: 18px;
+}
 .stat-numero {
   font-family: var(--fonte-titulo);
   font-size: 34px;
@@ -272,14 +306,31 @@ nav.menu-desktop a:hover::after { width: 100%; }
 }
 .stat-label { font-size: 13px; color: var(--cor-texto-claro); font-weight: 400; }
 
-.hero-imagem {
-  position: relative;
-  will-change: transform;
-}
-.hero-imagem img {
+.hero-selo {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--cor-primaria);
   border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
-  max-height: 560px;
+  box-shadow: var(--sombra-padrao);
+  padding: 14px 20px;
+}
+.hero-selo-icone {
+  width: 36px; height: 36px;
+  min-width: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--cor-secundaria-clara);
+}
+.hero-selo p {
+  font-size: 13px;
+  color: var(--cor-texto);
+  line-height: 1.4;
+  margin: 0;
 }
 
 /* ---------- Credibilidade / Serviços ---------- */
@@ -703,8 +754,15 @@ footer {
 
 /* ---------- Responsivo ---------- */
 @media (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; }
+  .hero {
+    min-height: auto;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.55) 55%, rgba(255,255,255,0.3) 100%), url('../imagens-refinamento/2-image.png');
+    background-position: top center;
+    padding-bottom: 60px;
+  }
+  .hero-texto { max-width: 100%; }
   .hero h1 { font-size: 38px; }
+  .hero-selo { position: static; margin-top: 24px; }
   .sobre-grid { grid-template-columns: 1fr; }
   .contato-grid { grid-template-columns: 1fr; }
   nav.menu-desktop { display: none; }
@@ -715,5 +773,6 @@ footer {
 @media (max-width: 500px) {
   .hero h1 { font-size: 30px; }
   .hero-stats { gap: 20px; }
+  .hero-stats-card { padding: 20px; }
   .section-titulo { font-size: 30px; }
 }
