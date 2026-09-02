@@ -558,7 +558,7 @@ nav.menu-desktop a.nav-ativo::after { width: 100%; }
   transform: scale(1.03);
   box-shadow: var(--sombra-hover);
 }
-.ambiente-item img { border-radius: 16px 16px 0 0; max-height: 280px; height: 280px; object-fit: cover; }
+.ambiente-item img { border-radius: 16px 16px 0 0; width: 100%; height: auto; object-fit: contain; }
 .ambiente-legenda { padding: 18px; text-align: center; font-weight: 600; color: var(--cor-destaque); }
 
 /* ---------- Diferenciais ---------- */
