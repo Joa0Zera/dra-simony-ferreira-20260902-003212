@@ -78,46 +78,13 @@ window.addEventListener('scroll', () => {
   }
 });
 
-/* ---------- Carrossel de Depoimentos ---------- */
+/* ---------- Esteira de Depoimentos ---------- */
 const track = document.getElementById('carrossel-track');
-const slides = track.children;
-const dotsContainer = document.getElementById('carrossel-dots');
-const btnPrev = document.getElementById('carrossel-prev');
-const btnNext = document.getElementById('carrossel-next');
-let indiceAtual = 0;
-let autoplay;
-
-for (let i = 0; i < slides.length; i++) {
-  const dot = document.createElement('div');
-  dot.classList.add('dot');
-  if (i === 0) dot.classList.add('ativo');
-  dot.addEventListener('click', () => irParaSlide(i));
-  dotsContainer.appendChild(dot);
+if (track) {
+  Array.from(track.children).forEach(card => {
+    track.appendChild(card.cloneNode(true));
+  });
 }
-const dots = dotsContainer.children;
-
-function irParaSlide(indice) {
-  indiceAtual = (indice + slides.length) % slides.length;
-  track.style.transform = `translateX(-${indiceAtual * 100}%)`;
-  Array.from(dots).forEach(d => d.classList.remove('ativo'));
-  dots[indiceAtual].classList.add('ativo');
-}
-
-btnPrev.addEventListener('click', () => { irParaSlide(indiceAtual - 1); reiniciarAutoplay(); });
-btnNext.addEventListener('click', () => { irParaSlide(indiceAtual + 1); reiniciarAutoplay(); });
-
-function iniciarAutoplay() {
-  autoplay = setInterval(() => irParaSlide(indiceAtual + 1), 5000);
-}
-function reiniciarAutoplay() {
-  clearInterval(autoplay);
-  iniciarAutoplay();
-}
-iniciarAutoplay();
-
-const carrossel = document.querySelector('.carrossel');
-carrossel.addEventListener('mouseenter', () => clearInterval(autoplay));
-carrossel.addEventListener('mouseleave', iniciarAutoplay);
 
 /* ---------- Sistema de Edição (config.json) ---------- */
 let configData = {};
