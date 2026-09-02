@@ -1140,7 +1140,9 @@ footer {
   gap: 24px;
   background: var(--cor-primaria);
   border-top: 1px solid var(--cor-secundaria);
-  padding: 28px 20px;
+  max-width: none;
+  margin: 0;
+  padding: 28px max(20px, calc((100vw - 1200px) / 2));
 }
 .footer-selo-item { display: flex; align-items: center; gap: 12px; }
 .footer-selo-icone { color: var(--cor-destaque); font-size: 20px; }
