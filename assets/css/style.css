@@ -230,7 +230,7 @@ nav.menu-desktop a.nav-ativo::after { width: 100%; }
   display: flex;
   align-items: center;
   padding-top: 110px;
-  background-image: linear-gradient(90deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.15) 45%, rgba(255,255,255,0) 65%), url('../imagens-refinamento/1-image.png');
+  background-image: linear-gradient(90deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.15) 45%, rgba(255,255,255,0) 65%), url('../imagens-refinamento/10-image.png');
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -1148,7 +1148,7 @@ footer {
 @media (max-width: 900px) {
   .hero {
     min-height: auto;
-    background-image: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.55) 55%, rgba(255,255,255,0.3) 100%), url('../imagens-refinamento/1-image.png');
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.55) 55%, rgba(255,255,255,0.3) 100%), url('../imagens-refinamento/10-image.png');
     background-position: top center;
     padding-bottom: 60px;
   }
